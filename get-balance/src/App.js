@@ -6,7 +6,7 @@ import { CSVLink } from 'react-csv';
 
 function App() {
   const Web3_BSC = new web3('https://bsc-dataseed.binance.org/');
-  const Web3_ETHER = new web3('https://main-light.eth.linkpool.io/')
+  const Web3_ETHER = new web3('https://speedy-nodes-nyc.moralis.io/5c2706c77e827bc97c4fe1fc/eth/mainnet')
   const [isBSC, setIsBSC] = useState(true)
   const [contract, setContract] = useState()
   const [inputAccount, setInputAccount] = useState('');
