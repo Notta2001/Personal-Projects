@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Container, Typography, Box, Button, TextField } from '@mui/material';
 import { CSVLink } from 'react-csv';
 import CSVReader from "react-csv-reader";
+import BigNumber from 'bignumber.js';
 
 function App() {
   const Web3_BSC = new web3('https://bsc-dataseed.binance.org/');
@@ -21,7 +22,7 @@ function App() {
 
   const handleForce = (data, fileInfo) => {
     data.map(async address => {
-      let currBalance = await getBalance(address[0])/10**18;
+      let currBalance = await getBalance(address[0]).dividedBy(BigNumber(10).exponentiatedBy(18)).toFixed();
       listInfo.push([address[0], currBalance]);
       console.log(listInfo)
     })
