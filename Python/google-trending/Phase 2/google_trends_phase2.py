@@ -7,7 +7,7 @@ pytrends = TrendReq(tz=360)
 # Connect to sql
 con = psycopg2.connect(database="postgres", user="postgres", password="05092001thang", host="localhost", port="2001")
 cur = con.cursor()
-
+ 
 # Read key words from excel
 df = pd.read_excel('keytrends.xlsx', engine='openpyxl')
 # Get the header of all columns
